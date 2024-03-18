@@ -33,7 +33,7 @@ jobs:
           FILE_SIZE=$(stat -c %s "$FILE_PATH")
 
           if [ "$FILE_SIZE" -eq 0 ]; then
-            echo "Error: File size is zero!"
+            echo "No Secrets Found" >> $GITHUB_STEP_SUMMARY
             exit 0
           else
             echo "File size is not zero."
