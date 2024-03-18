@@ -3,6 +3,9 @@ on: push
 jobs:
   trufflehog:
     runs-on: ubuntu-latest
+    env:
+      ORG_NAME: ${{ secrets.TRUFFLEHOG_ORG_NAME }}
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
